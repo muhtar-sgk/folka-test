@@ -8,7 +8,7 @@ import FolkaTab from './FolkaTab'
 
 const Stack = createNativeStackNavigator()
 
-function Main() {
+const RootNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
@@ -27,10 +27,13 @@ function Main() {
           component={FolkaTab} 
           options={{headerShown: false}}
         />
-        <Stack.Screen name='Detail' component={DetailScreen} />
+        <Stack.Screen 
+          name='Detail' 
+          component={DetailScreen}
+        />
       </Stack.Navigator>
     </NavigationContainer>
-  );
+  )
 }
 
-export default Main;
+export default RootNavigation
