@@ -52,7 +52,7 @@ export default function FolkaTab() {
       >
         <Tab.Screen 
           name="Home" 
-          component={TestScreen}
+          component={HomeScreen}
           options={{
             tabBarLabel: 'Home',
             tabBarIcon: ({color}) => (              
@@ -82,7 +82,7 @@ export default function FolkaTab() {
         />
         <Tab.Screen 
           name="HomeScreen" 
-          component={HomeScreen} 
+          component={TestScreen} 
           options={{
             tabBarLabel: 'Account',
             tabBarIcon: ({color}) => (              
