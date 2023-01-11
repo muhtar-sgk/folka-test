@@ -79,21 +79,39 @@ const HomeScreen = ({navigation}) => {
             </View>            
           </View>
           <View style={styles.containerMenu}>
-            <View>
-              <Icon name='map' size={30} color={Colors.red} style={styles.icon}/>
-              <Text style={styles.textIcon}>Near Resto</Text>
+            <View style={{marginLeft: 16}}>
+              <Icon name='bed' size={30} color={Colors.blue} style={styles.icon}/>
+              <Text style={styles.textIcon}>Hotel</Text>
+            </View>
+            <View style={{marginLeft: 16}}>
+              <Icon name='book' size={30} color={Colors.blue} style={styles.icon}/>
+              <Text style={styles.textIcon}>Library</Text>
+            </View>
+            <View style={{marginRight: 8}}>
+              <Icon name='bus' size={30} color={Colors.blue} style={styles.icon}/>
+              <Text style={styles.textIcon}>Travel</Text>
             </View>
             <View>
-              <Icon name='business' size={30} color={Colors.red} style={styles.icon}/>
-              <Text style={styles.textIcon}>Mall</Text>
+              <Icon name='pricetag' size={30} color={Colors.blue} style={styles.icon}/>
+              <Text style={styles.textIcon}>Shopping</Text>
+            </View>            
+          </View>
+          <View style={styles.containerMenu}>
+            <View style={{marginLeft: 8}}>
+              <Icon name='medkit' size={30} color={Colors.green} style={styles.icon}/>
+              <Text style={styles.textIcon}>Hospital</Text>
+            </View>
+            <View style={{marginLeft: 16}}>
+              <Icon name='settings' size={30} color={Colors.green} style={styles.icon}/>
+              <Text style={styles.textIcon}>Setting</Text>
             </View>
             <View>
-              <Icon name='train' size={30} color={Colors.red} style={styles.icon}/>
-              <Text style={styles.textIcon}>Train</Text>
+              <Icon name='notifications' size={30} color={Colors.green} style={styles.icon}/>
+              <Text style={styles.textIcon}>Notification</Text>
             </View>
-            <View>
-              <Icon name='school' size={30} color={Colors.red} style={styles.icon}/>
-              <Text style={styles.textIcon}>Education</Text>
+            <View style={{marginRight: 8}}>
+              <Icon name='laptop' size={30} color={Colors.green} style={styles.icon}/>
+              <Text style={styles.textIcon}>Gadget</Text>
             </View>            
           </View>
         </View>
