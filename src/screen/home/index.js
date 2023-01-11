@@ -1,4 +1,4 @@
-import { View, Text, FlatList, SafeAreaView, StyleSheet } from 'react-native'
+import { View, Text, FlatList, SafeAreaView, StyleSheet, ActivityIndicator } from 'react-native'
 import React, { useEffect, useRef, useMemo, useCallback, useState } from 'react'
 import ListItem from '../../components/ListItem'
 import Header from '../../components/Header'
@@ -13,6 +13,7 @@ import Colors from "../../consts/Colors"
 const HomeScreen = ({navigation}) => {
   const [index, setIndex] = useState(0)
   const listProduct = useSelector(state => state.listProductReducer?.data)
+  const isLoading = useSelector(state => state.listProductReducer.isLoading)
 
   const dispatch = useDispatch()
   useEffect(() => {
@@ -90,6 +91,14 @@ const HomeScreen = ({navigation}) => {
       return <View />
     }
   }
+
+  if(isLoading) {
+    return (
+      <View style={styles.containerLoading}>
+        <ActivityIndicator size={'large'} color={Colors.red} />
+      </View>
+    )
+  }
     
   return (
     <>
@@ -132,6 +141,12 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white'
+  },
+  containerLoading: {
+    flex: 1,
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   top: {
     flex: 0,
