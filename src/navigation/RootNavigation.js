@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeScreen from '../screen/home'
 import SplashScreen from '../screen/splash'
 import FolkaTab from './FolkaTab'
+import DetailProductScreen from '../screen/home/DetailProductScreen'
 
 const Stack = createNativeStackNavigator()
 
@@ -24,6 +25,11 @@ const RootNavigation = () => {
         <Stack.Screen 
           name='FolkaTab' 
           component={FolkaTab} 
+          options={{headerShown: false}}
+        />
+        <Stack.Screen 
+          name='DetailProduct' 
+          component={DetailProductScreen} 
           options={{headerShown: false}}
         />
       </Stack.Navigator>

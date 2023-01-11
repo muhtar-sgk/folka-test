@@ -29,7 +29,11 @@ const HomeScreen = ({navigation}) => {
             title={item.name}
             source={{uri: item.cover}}
             ItemSeparatorComponent={() => <Separator />}
-            onPressDetail={() => navigation.navigate('Detail')}
+            onPressDetail={() => navigation.navigate('DetailProduct', {
+              name: item.name,
+              cover: item.cover,
+              desc: item.desc
+            })}
           />
         )}
         horizontal={false}

@@ -10,6 +10,7 @@ const ListItem = ({title, onPressDetail, source}) => {
       <Image 
         source={source}
         style={styles.img}
+        resizeMode='contain'
       />
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
@@ -32,7 +33,6 @@ const styles = StyleSheet.create({
     marginLeft: 8,
     fontSize: 16,
     fontWeight: 'bold',
-    marginTop: 8
   },
   img: {
     width: 170,
