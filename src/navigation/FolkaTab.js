@@ -5,6 +5,7 @@ import DetailScreen from '../screen/detail'
 import HomeScreen from '../screen/home/'
 import Icon from 'react-native-ionicons'
 import Colors from '../consts/Colors'
+import Cart from '../screen/cart'
 
 function TestScreen() {
   return (
@@ -62,7 +63,7 @@ export default function FolkaTab() {
         />
         <Tab.Screen 
           name="Settings" 
-          component={SettingsScreen}
+          component={Cart}
           options={{
             tabBarLabel: 'Cart',
             tabBarIcon: ({color}) => (              
