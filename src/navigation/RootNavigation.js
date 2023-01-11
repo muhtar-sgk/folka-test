@@ -3,7 +3,6 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeScreen from '../screen/home'
 import SplashScreen from '../screen/splash'
-import DetailScreen from '../screen/detail'
 import FolkaTab from './FolkaTab'
 
 const Stack = createNativeStackNavigator()
@@ -26,10 +25,6 @@ const RootNavigation = () => {
           name='FolkaTab' 
           component={FolkaTab} 
           options={{headerShown: false}}
-        />
-        <Stack.Screen 
-          name='Detail' 
-          component={DetailScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>

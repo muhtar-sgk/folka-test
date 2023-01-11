@@ -19,7 +19,8 @@ const styles = StyleSheet.create({
   text:  {
     color: 'white',
     fontWeight: 'bold',
-    marginLeft: 15
+    marginLeft: 15,
+    fontSize: 24
   }
 })
 export default Header

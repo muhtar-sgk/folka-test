@@ -1,29 +1,14 @@
 import * as React from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import DetailScreen from '../screen/detail'
 import HomeScreen from '../screen/home/'
 import Icon from 'react-native-ionicons'
 import Colors from '../consts/Colors'
-import Cart from '../screen/cart'
+import WalletScreen from '../screen/wallet'
+import AccountScreen from '../screen/account'
+import CartScreen from '../screen/cart'
 
-function TestScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Home!</Text>
-    </View>
-  )
-}
-
-function SettingsScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
-    </View>
-  )
-}
-
-const Tab = createBottomTabNavigator();
+const Tab = createBottomTabNavigator()
 
 export default function FolkaTab() {
   
@@ -34,10 +19,10 @@ export default function FolkaTab() {
         tabBarInactiveTintColor: Colors.gray,     
         tabBarLabelStyle: {
           marginBottoms: 16,
-        } ,
+        },
         tabBarIconStyle: {
           marginTop: 16
-        } ,
+        },
         tabBarStyle: {      
           position: 'absolute',
           bottom: 20, 
@@ -52,7 +37,7 @@ export default function FolkaTab() {
       }}      
       >
         <Tab.Screen 
-          name="Home" 
+          name='Home' 
           component={HomeScreen}
           options={{
             tabBarLabel: 'Home',
@@ -62,8 +47,8 @@ export default function FolkaTab() {
           }}
         />
         <Tab.Screen 
-          name="Settings" 
-          component={Cart}
+          name='Cart' 
+          component={CartScreen}
           options={{
             tabBarLabel: 'Cart',
             tabBarIcon: ({color}) => (              
@@ -72,8 +57,8 @@ export default function FolkaTab() {
           }}
         />
         <Tab.Screen 
-          name="Detail" 
-          component={DetailScreen} 
+          name='Wallet' 
+          component={WalletScreen} 
           options={{
             tabBarLabel: 'E-Wallet',
             tabBarIcon: ({color}) => (              
@@ -82,8 +67,8 @@ export default function FolkaTab() {
           }}  
         />
         <Tab.Screen 
-          name="HomeScreen" 
-          component={TestScreen} 
+          name='Account' 
+          component={AccountScreen} 
           options={{
             tabBarLabel: 'Account',
             tabBarIcon: ({color}) => (              
@@ -104,6 +89,6 @@ const style = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.5,
-    elevation: 5,
+    elevation: 5
   }
-});
+})
