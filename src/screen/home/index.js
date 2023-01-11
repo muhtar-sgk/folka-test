@@ -91,12 +91,10 @@ const HomeScreen = ({navigation}) => {
     }
   }
     
-
-
   return (
     <>
       <SafeAreaView style={styles.top}/>
-     <View style={styles.container}>
+      <View style={styles.container}>
       <Header title={'List Product'}/>
       <FlatList 
         data={listProduct}

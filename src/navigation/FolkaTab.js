@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { StyleSheet } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import HomeScreen from '../screen/home/'
 import Icon from 'react-native-ionicons'
@@ -10,8 +10,7 @@ import CartScreen from '../screen/cart'
 
 const Tab = createBottomTabNavigator()
 
-export default function FolkaTab() {
-  
+const FolkaTab = () => {
   return (
       <Tab.Navigator
       screenOptions={{
@@ -77,7 +76,7 @@ export default function FolkaTab() {
           }}
         />
       </Tab.Navigator>
-  );
+  )
 }
 
 const style = StyleSheet.create({
@@ -92,3 +91,5 @@ const style = StyleSheet.create({
     elevation: 5
   }
 })
+
+export default FolkaTab
