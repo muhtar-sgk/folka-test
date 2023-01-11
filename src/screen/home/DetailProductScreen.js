@@ -10,7 +10,7 @@ const DetailProductScreen = ({route, navigation}) => {
       <SafeAreaView style={styles.topArea}/>
       <View style={styles.container}>
         <Header 
-          title='Product Detail'
+          title='Detail Product'
           onPress={() => navigation.goBack()}
         />
         <Image 

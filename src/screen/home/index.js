@@ -1,5 +1,5 @@
 import { View, Text, FlatList, SafeAreaView, StyleSheet } from 'react-native'
-import React, { useEffect, useRef, useMemo, useCallback } from 'react'
+import React, { useEffect, useRef, useMemo, useCallback, useState } from 'react'
 import ListItem from '../../components/ListItem'
 import Header from '../../components/Header'
 import { useDispatch, useSelector } from 'react-redux'
@@ -11,6 +11,7 @@ import Icon from 'react-native-ionicons'
 import Colors from "../../consts/Colors"
 
 const HomeScreen = ({navigation}) => {
+  const [index, setIndex] = useState(0)
   const listProduct = useSelector(state => state.listProductReducer?.data)
 
   const dispatch = useDispatch()
@@ -22,43 +23,12 @@ const HomeScreen = ({navigation}) => {
   const snapPoints = useMemo(() => ['14%', '94%'], []);
 
   const handleSheetChanges = useCallback((index) => {
-        console.log('handleSheetChanges', index);
-      }, []);
-    
+    setIndex(index)
+  }, [])
 
-
-  return (
-    <>
-      <SafeAreaView style={styles.top}/>
-     <View style={styles.container}>
-      <Header title={'List Product'}/>
-      <FlatList 
-        data={listProduct}
-        columnWrapperStyle={{justifyContent: 'space-between', marginBottom: 10}}
-        style={{padding: 16}}
-        renderItem={({item}) => (
-          <ListItem 
-            title={item.name}
-            source={{uri: item.cover}}
-            ItemSeparatorComponent={() => <Separator />}
-            onPressDetail={() => navigation.navigate('DetailProduct', {
-              name: item.name,
-              cover: item.cover,
-              desc: item.desc
-            })}
-          />
-        )}
-        horizontal={false}
-        numColumns={2}
-      />
-    </View>
-    <BottomSheet
-        ref={bottomSheetModalRef}
-        index={0}
-        snapPoints={snapPoints}
-        onChange={handleSheetChanges}
-        
-      >
+  const renderMenu = () => {
+    if(index === 1) {
+      return (
         <View style={styles.contentContainer}>
           <View style={styles.containerMenu}>
             <View>
@@ -115,6 +85,46 @@ const HomeScreen = ({navigation}) => {
             </View>            
           </View>
         </View>
+      )
+    } else {
+      return <View />
+    }
+  }
+    
+
+
+  return (
+    <>
+      <SafeAreaView style={styles.top}/>
+     <View style={styles.container}>
+      <Header title={'List Product'}/>
+      <FlatList 
+        data={listProduct}
+        columnWrapperStyle={{justifyContent: 'space-between', marginBottom: 10}}
+        style={{padding: 16}}
+        renderItem={({item}) => (
+          <ListItem 
+            title={item.name}
+            source={{uri: item.cover}}
+            ItemSeparatorComponent={() => <Separator />}
+            onPressDetail={() => navigation.navigate('DetailProduct', {
+              name: item.name,
+              cover: item.cover,
+              desc: item.desc
+            })}
+          />
+        )}
+        horizontal={false}
+        numColumns={2}
+      />
+    </View>
+    <BottomSheet
+        ref={bottomSheetModalRef}
+        index={0}
+        snapPoints={snapPoints}
+        onChange={handleSheetChanges}
+      >
+        {renderMenu()}
       </BottomSheet>
     </>
   )
